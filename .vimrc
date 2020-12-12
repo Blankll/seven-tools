@@ -1,4 +1,25 @@
 " this is SEVEN's vim settings
+" 插件
+call plug#begin('~/.vim/plugged')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mhinz/vim-startify'
+Plug 'yggdroot/indentline'
+Plug 'joshdick/onedark.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-abolish'
+Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdcommenter'
+Plug 'majutsushi/tagbar'
+Plug 'Raimondi/delimitMate'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
 
 "设置leader
 let mapleader=","
@@ -39,6 +60,7 @@ let g:airline_powerline_fonts = 1 " 正常显示箭头
 let g:airline_theme = 'powerlineish'
 let g:airline#extensions#branch#enabled=1
 " easymotion setting
+nmap ss <Plug>(easymotion-s2)
 " 行级跳转
 map <Leader><Leader>j <Plug>(easymotion-j)
 map <Leader><Leader>k <Plug>(easymotion-k)
@@ -50,35 +72,5 @@ map <Leader><leader>. <Plug>(easymotion-repeat)
 
 " tagbar setting
 nnoremap <leader>t :TagbarToggle<CR>
-" deoplete settings
-let g:deoplete#enable_at_startup = 1
-set completeopt-=preview " 选择成功后自动关闭提示
-" 插件
-call plug#begin('~/.vim/plugged')
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'mhinz/vim-startify'
-Plug 'yggdroot/indentline'
-Plug 'joshdick/onedark.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'kien/ctrlp.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdcommenter'
-Plug 'majutsushi/tagbar'
-Plug 'Raimondi/delimitMate'
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-call plug#end()
-
+" coc plugin
+let g:coc_global_extensions = ['coc-json']

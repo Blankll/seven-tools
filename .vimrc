@@ -19,8 +19,10 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
 Plug 'Raimondi/delimitMate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'leafgarland/typescript-vim'
 call plug#end()
-
+" coc auto completion
+let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
 "设置leader
 let mapleader=","
 let g:mapleader=","
@@ -73,4 +75,7 @@ map <Leader><leader>. <Plug>(easymotion-repeat)
 " tagbar setting
 nnoremap <leader>t :TagbarToggle<CR>
 " coc plugin
-let g:coc_global_extensions = ['coc-json']
+" Make <CR> auto-select the first completion item and notify coc.nvim to
+" format on enter, <cr> could be remapped by other vim plugin
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"

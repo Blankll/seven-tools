@@ -20,9 +20,11 @@ Plug 'majutsushi/tagbar'
 Plug 'Raimondi/delimitMate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 " coc auto completion
-let g:coc_global_extensions = ['coc-json', 'coc-tsserver']
+let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-json', 'coc-tsserver', 'coc-solargraph']
 "设置leader
 let mapleader=","
 let g:mapleader=","
@@ -50,8 +52,8 @@ set ignorecase smartcase    " 搜索时忽略大小写，但在有一个或以�
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
 
 "不同文件类型的缩进
-au FileType html,python,vim,javascript,phtml,yaml setl shiftwidth=2 tabstop=2 expandtab
-au FileType java,php setl shiftwidth=4 tabstop=4 expandtab
+au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby setl shiftwidth=2 tabstop=2 expandtab
+au FileType c,java,php setl shiftwidth=4 tabstop=4 expandtab
 
 " nerdtree setting
 nmap ,v :NERDTreeFind<cr>
@@ -79,3 +81,9 @@ nnoremap <leader>t :TagbarToggle<CR>
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+" change fzf setting
+nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
+" change cursor shap in mac iterm2
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"

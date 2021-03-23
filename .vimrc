@@ -50,6 +50,8 @@ set nowrap                  " 关闭自动换行
 set smartindent             " 开启新行时使用智能自动缩
 set ignorecase smartcase    " 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
+set showtabline=2 " 总是显示tab栏
+set tabpagemax=15 " tab最大支持数量
 
 "不同文件类型的缩进
 au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby setl shiftwidth=2 tabstop=2 expandtab

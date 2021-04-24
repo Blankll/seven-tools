@@ -1,0 +1,51 @@
+" this is SEVEN's IdeaVim settings
+"设置leader
+let mapleader=","
+let g:mapleader=","
+" 插件
+set easymotion
+set NERDTree
+set surround
+
+" common settings
+set nocompatible    " 关闭vi兼容模式
+set autoindent      " 自动保持缩进
+syntax on           " 语法高亮
+colorscheme onedark " 主题
+set number          " 设置行号
+set tabstop=4       " 设置tab长度
+set softtabstop=4   " tab转为空格的个数
+set expandtab       " 自动将tab转为空格
+set magic           " 显示括号配对情况
+set softtabstop=4   " 使得按退格键时可以一次删掉 4 个空格
+set nobackup        " 覆盖文件时不备份
+set nowb
+" set mouse=a         " 支持鼠标
+set autochdir       " 自动切换目录到当前正在编辑的文件所属目录
+set showmatch       " 括号自动匹配
+set incsearch               " 输入搜索内容时就跳转到第一个输入结果
+set hlsearch                " 搜索时高亮显示被找到的文
+set nowrap                  " 关闭自动换行
+set smartindent             " 开启新行时使用智能自动缩
+set ignorecase smartcase    " 搜索时忽略大小写，但在有一个或以上大写字母时仍大小写敏感
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
+" set showtabline=2 " 总是显示tab栏
+set tabpagemax=15 " tab最大支持数量
+
+" nerdtree setting
+nmap ,v :NERDTreeFind<cr>
+nmap ,g :NERDTreeToggle<cr>
+let NERDTreeShowHidden=1
+" easymotion setting
+nmap ss <Plug>(easymotion-s2)
+" 行级跳转
+map <Leader><Leader>j <Plug>(easymotion-j)
+map <Leader><Leader>k <Plug>(easymotion-k)
+" 行内跳转
+map <Leader><leader>h <Plug>(easymotion-linebackward)
+map <Leader><leader>l <Plug>(easymotion-lineforward)
+" 重复上一次动作
+map <Leader><leader>. <Plug>(easymotion-repeat)
+
+" tagbar setting
+nnoremap <leader>t :TagbarToggle<CR>

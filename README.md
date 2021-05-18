@@ -1,6 +1,12 @@
 # seven-vim
 
 ## use my vim settings
+one line command:
+```bash
+bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/setup.sh)
+```
+or load manually:
+
 1. download repostory
 ```bash
 git clone https://github.com/Blankll/seven-vim.git
@@ -10,7 +16,6 @@ or download manually and extract the compressed file
 2. create soft link for .vim, .vimrc to ~/ directory
 ```bash
 cd your_seven-vim_dir
-ln -s .vim/ ~/.vim
 ln -s .vimrc ~/.vimrc
 ```
 

@@ -24,7 +24,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 " coc auto completion
-let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-json', 'coc-tsserver', 'coc-solargraph']
+let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-eslint']
 "设置leader
 let mapleader=","
 let g:mapleader=","
@@ -55,9 +55,15 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
 set tabpagemax=15 " tab最大支持数量
 
 "不同文件类型的缩进
-au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby setl shiftwidth=2 tabstop=2 expandtab
+au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby,vue setl shiftwidth=2 tabstop=2 expandtab
 au FileType c,java,php setl shiftwidth=4 tabstop=4 expandtab
 
+" file auto save
+augroup autosave
+    " autocmd! " clear all autocmds in this group line
+    autocmd BufRead * if &filetype == "" | setlocal ft=text | endif " if the filetype is unset, set it to 'text' line
+    autocmd FileType * autocmd InsertLeave <buffer> if &readonly == 0 | write | endif " When leaving insert and the file is writable, save the file
+augroup END
 " nerdtree setting
 nmap ,v :NERDTreeFind<cr>
 nmap ,g :NERDTreeToggle<cr>

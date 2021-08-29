@@ -1,6 +1,26 @@
-# seven-vim
+# seven-tools
+
+this is a repo collect the tools I used in dev life.
+
+menual
+
+- macos setup
+- Vim setup
+- Iterm2 setup
+- Tmux setup
+
+## setup macos
+
+One line command(also include vim settings):
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/macos-setup.sh)
+```
+
+
 
 ## use my vim settings
+
 one line command:
 ```bash
 bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/setup.sh)

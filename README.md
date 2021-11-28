@@ -14,7 +14,7 @@ menual
 One line command(also include vim settings):
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/macos-setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-tools/master/macos-setup.sh)
 ```
 
 
@@ -23,20 +23,20 @@ bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/macos-
 
 one line command:
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-tools/master/setup.sh)
 ```
 or load manually:
 
 1. download repostory
 ```bash
-git clone https://github.com/Blankll/seven-vim.git
+git clone https://github.com/Blankll/seven-tools.git
 ```
 or download manually and extract the compressed file
 
 2. create soft link for  .vimrc to ~/ directory
 ```bash
 cd ~/
-ln -s $(pwd-to-seven-vim)/.vimrc ~/.vimrc
+ln -s $(pwd-to-seven-tools)/.vimrc ~/.vimrc
 ```
 
 3. install vim-plug

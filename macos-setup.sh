@@ -24,5 +24,6 @@ fi
 # install seven-tools
 bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-tools/master/setup.sh)
 
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
+# install powerlevel10k
+brew install romkatv/powerlevel10k/powerlevel10k
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc

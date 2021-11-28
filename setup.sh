@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git clone https://github.com/Blankll/seven-vim.git
+git clone https://github.com/Blankll/seven-tools.git
 
-cd seven-vim
+cd seven-tools
 
 ln -s $(pwd)/.vimrc ~/.vimrc
 

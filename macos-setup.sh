@@ -17,8 +17,12 @@ brew install --cask youdaodict
 brew install --cask qq
 brew install --cask wechat
 brew install --cask neteasemusic
+if [[ ! -d "~/Documents/tools/" ]]; then
+    kdir ~/Documents/tools
+fi
+
 cd ~/Documents/tools/
-bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-vim/master/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-tools/master/setup.sh)
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc

@@ -21,7 +21,7 @@ if [[ ! -d "~/Documents/tools/" ]]; then
     kdir ~/Documents/tools
 fi
 
-cd ~/Documents/tools/
+# install seven-tools
 bash <(curl -s https://raw.githubusercontent.com/Blankll/seven-tools/master/setup.sh)
 
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k

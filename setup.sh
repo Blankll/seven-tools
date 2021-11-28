@@ -1,9 +1,13 @@
 #!/bin/bash -x
 
-versions=($(curl -Ls https://github.com/Blankll/seven-tools/releases | grep -A 3 '<span class="ml-1 wb-break-all">.*' | grep -o -E 'v[0-9].*'))
-latest_version=$versions[1]
-rm "${latest_version}.zip"
-rm -rf "tool-${latest_version}"
+latest_version=($(curl -Ls https://github.com/Blankll/seven-tools/releases | grep -A 3 '<span class="ml-1 wb-break-all">.*' | grep -o -E 'v[0-9].*'))
+
+if [[ -f "${latest_version}.zip" ]]; then
+    rm "${latest_version}.zip"
+fi
+if [[ -d "tool-${latest_version}" ]]; then
+    rm -rf "tool-${latest_version}"
+fi
 
 curl -L "https://github.com/Blankll/seven-tools/archive/refs/tags/${latest_version}.zip" -o "${latest_version}.zip"
 unzip "${latest_version}.zip" -d "tool-${latest_version}"

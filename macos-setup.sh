@@ -10,6 +10,7 @@ brew install git
 brew install docker
 brew install tig
 brew install git-delta
+brew install jq
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # install seven-tools

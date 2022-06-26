@@ -34,3 +34,4 @@ brew install --cask neteasemusic
 brew install --cask youdaodict
 brew install --cask qq
 brew install --cask wechat
+brew install --cask keka

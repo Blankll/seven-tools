@@ -10,7 +10,7 @@ brew install git
 brew install docker
 brew install tig
 brew install git-delta
-brew install jq
+
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 # install seven-tools
@@ -21,6 +21,9 @@ powerlevel_configed=$(cat ~/.zshrc | grep 'powerlevel10k.zsh-theme')
 if [[ -z $powerlevel_configed ]]; then
     echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 fi
+
+brew install jq
+brew install harelba/q/q # https://github.com/harelba/q
 
 brew install --cask alfred
 brew install --cask typora

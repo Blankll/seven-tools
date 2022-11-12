@@ -6,9 +6,14 @@ sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 if [[ $(uname -m) == "arm64" && $(grep -e "[homebrew | brew]" ~/.zshrc | wc -l | bc) == 0 ]];then
   echo "PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
+  echo "PATH=/opt/homebrew/bin:$PATH" >> ~/.profile
 elif [[ $(uname -m) == "x86_64" && $(grep -e "[homebrew | brew]" ~/.zshrc | wc -l | bc) == 0 ]];then
   echo "PATH=/usr/local/homebrew/bin:$PATH" >> ~/.zshrc
+  echo "PATH=/usr/local/homebrew/bin:$PATH" >> ~/.profile
 fi
+
+source ~/.profile
+source ~/.zshrc
 
 brew install --cask iterm2
 

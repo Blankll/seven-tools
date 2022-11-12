@@ -5,8 +5,8 @@ latest_version=($(curl -Ls https://github.com/Blankll/seven-tools/releases | gre
 if [[ -f "${latest_version}.zip" ]]; then
   rm "${latest_version}.zip"
 fi
-if [[ -d "tool-${latest_version}" ]]; then
-  rm -rf "tool-${latest_version}"
+if [[ -d "${latest_version}" ]]; then
+  rm -rf "${latest_version}"
 fi
 
 curl -L "https://github.com/Blankll/seven-tools/archive/refs/tags/${latest_version}.zip" -o "${latest_version}.zip"
@@ -16,14 +16,14 @@ tool_dir=$(ls "tool-${latest_version}")
 tool_dir="tool-${latest_version}/${tool_dir}"
 target_dir="~/Documents/tools/seven-tools"
 
-if [[ -d "$target_dir" ]]; then
-  rm -rf $target_dir
+if [[ -d "${target_dir}" ]]; then
+  rm -rf "${target_dir}"
 fi
 
-mkdir -p $target_dir
-mv "$tool_dir/*" "$target_dir/"
+mkdir -p "${target_dir}"
+mv "${tool_dir}/*" "${target_dir}/"
 rm "${latest_version}.zip"
-cd $target_dir
+cd "${target_dir}"
 
 ln -s $(pwd)/.vimrc ~/.vimrc
 
@@ -43,6 +43,6 @@ vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 if [[ -f "${latest_version}.zip" ]]; then
   rm "${latest_version}.zip"
 fi
-if [[ -d "tool-${latest_version}" ]]; then
-  rm -rf "tool-${latest_version}"
+if [[ -d "${latest_version}" ]]; then
+  rm -rf "${latest_version}"
 fi

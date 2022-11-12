@@ -20,7 +20,7 @@ if [[ -d $target_dir ]]; then
   rm -rf $target_dir
 fi
 
-mkdir -p $target_dir
+mkdir -p ~/Documents/tools/seven-tools
 mv $tool_dir/* $target_dir/
 rm "${latest_version}.zip"
 cd $target_dir

@@ -20,9 +20,10 @@ if [[ -d $target_dir ]]; then
   rm -rf $target_dir
 fi
 
-mkdir -p ~/Documents/tools
-mv $tool_dir ~/Documents/tools/seven-tools
+mkdir -p ~/Documents/tools/seven-tools
+cp -r $tool_dir/* ~/Documents/tools/seven-tools/
 rm "${latest_version}.zip"
+rm -rf "tool-${latest_version}"
 cd ~/Documents/tools/seven-tools
 
 ln -s $(pwd)/.vimrc ~/.vimrc
@@ -39,10 +40,3 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 
-# clean up
-if [[ -f "${latest_version}.zip" ]]; then
-  rm "${latest_version}.zip"
-fi
-if [[ -d "tool-${latest_version}" ]]; then
-  rm -rf "tool-${latest_version}"
-fi

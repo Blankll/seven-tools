@@ -16,14 +16,14 @@ tool_dir=$(ls "tool-${latest_version}")
 tool_dir="tool-${latest_version}/${tool_dir}"
 target_dir="~/Documents/tools/seven-tools"
 
-if [[ -d "${target_dir}" ]]; then
-  rm -rf "${target_dir}"
+if [[ -d $target_dir ]]; then
+  rm -rf $target_dir
 fi
 
-mkdir -p "${target_dir}"
-mv "${tool_dir}/*" "${target_dir}/"
+mkdir -p $target_dir
+mv $tool_dir/* $target_dir/
 rm "${latest_version}.zip"
-cd "${target_dir}"
+cd $target_dir
 
 ln -s $(pwd)/.vimrc ~/.vimrc
 

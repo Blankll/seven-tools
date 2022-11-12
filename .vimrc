@@ -39,7 +39,6 @@ set tabstop=4       " 设置tab长度
 set softtabstop=4   " tab转为空格的个数
 set expandtab       " 自动将tab转为空格
 set magic           " 显示括号配对情况
-set softtabstop=4   " 使得按退格键时可以一次删掉 4 个空格
 set nobackup        " 覆盖文件时不备份
 set nowb
 " set mouse=a         " 支持鼠标
@@ -55,7 +54,7 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
 set tabpagemax=15 " tab最大支持数量
 
 "不同文件类型的缩进
-au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby,vue setl shiftwidth=2 tabstop=2 expandtab
+au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby,vue,sh setl shiftwidth=2 tabstop=2 expandtab
 au FileType c,java,php setl shiftwidth=4 tabstop=4 expandtab
 
 " file auto save

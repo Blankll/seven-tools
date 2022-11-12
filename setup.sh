@@ -20,10 +20,10 @@ if [[ -d $target_dir ]]; then
   rm -rf $target_dir
 fi
 
-mkdir -p ~/Documents/tools/seven-tools
+mkdir -p ~/Documents/tools
 mv $tool_dir ~/Documents/tools/seven-tools
 rm "${latest_version}.zip"
-cd $target_dir
+cd ~/Documents/tools/seven-tools
 
 ln -s $(pwd)/.vimrc ~/.vimrc
 

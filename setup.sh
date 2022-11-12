@@ -5,8 +5,8 @@ latest_version=($(curl -Ls https://github.com/Blankll/seven-tools/releases | gre
 if [[ -f "${latest_version}.zip" ]]; then
   rm "${latest_version}.zip"
 fi
-if [[ -d "${latest_version}" ]]; then
-  rm -rf "${latest_version}"
+if [[ -d "tool-${latest_version}" ]]; then
+  rm -rf "tool-${latest_version}"
 fi
 
 curl -L "https://github.com/Blankll/seven-tools/archive/refs/tags/${latest_version}.zip" -o "${latest_version}.zip"
@@ -43,6 +43,6 @@ vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
 if [[ -f "${latest_version}.zip" ]]; then
   rm "${latest_version}.zip"
 fi
-if [[ -d "${latest_version}" ]]; then
-  rm -rf "${latest_version}"
+if [[ -d "tool-${latest_version}" ]]; then
+  rm -rf "tool-${latest_version}"
 fi

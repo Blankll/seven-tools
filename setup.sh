@@ -36,3 +36,11 @@ ln -s $(pwd)/.tigrc ~/.tigrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim -E -s -u "$HOME/.vimrc" +PlugInstall +qall
+
+# clean up
+if [[ -f "${latest_version}.zip" ]]; then
+    rm "${latest_version}.zip"
+fi
+if [[ -d "tool-${latest_version}" ]]; then
+    rm -rf "tool-${latest_version}"
+fi

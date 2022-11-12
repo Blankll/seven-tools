@@ -21,7 +21,7 @@ if [[ -d $target_dir ]]; then
 fi
 
 mkdir -p ~/Documents/tools/seven-tools
-mv $tool_dir/* $target_dir/
+mv $tool_dir ~/Documents/tools/seven-tools
 rm "${latest_version}.zip"
 cd $target_dir
 

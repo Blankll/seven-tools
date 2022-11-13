@@ -23,11 +23,12 @@ source ~/.profile
 source ~/.zshrc
 
 brew install --cask iterm2
+brew install --cask docker
 
 brew install git
-brew install docker
 brew install tig
 brew install git-delta
+brew install vim && brew link vim --force
 
 # nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
@@ -51,6 +52,7 @@ brew install --cask spacelauncher
 brew install --cask shiftit
 brew install --cask clipy
 brew install --cask appcleaner
+brew install --cask stats
 
 brew install --cask neteasemusic
 brew install --cask youdaodict

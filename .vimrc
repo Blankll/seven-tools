@@ -6,25 +6,23 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdcommenter'
 Plug 'mhinz/vim-startify'
 Plug 'yggdroot/indentline'
 Plug 'joshdick/onedark.vim'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'kien/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
-Plug 'scrooloose/nerdcommenter'
 Plug 'majutsushi/tagbar'
 Plug 'Raimondi/delimitMate'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'leafgarland/typescript-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 call plug#end()
 " coc auto completion
-let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-json', 'coc-tsserver', 'coc-solargraph', 'coc-eslint']
+let g:coc_global_extensions = ['coc-sh', 'coc-clangd', 'coc-json', 'coc-tsserver', 'coc-eslint', 'coc-solargraph', 'coc-eslint', 'coc-go']
 "设置leader
 let mapleader=","
 let g:mapleader=","
@@ -54,7 +52,7 @@ set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp936,gb18030   " 设置编码
 set tabpagemax=15 " tab最大支持数量
 
 "不同文件类型的缩进
-au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby,vue,sh setl shiftwidth=2 tabstop=2 expandtab
+au FileType html,python,vim,javascript,typescript,phtml,yaml,ruby,vue,sh,go setl shiftwidth=2 tabstop=2 expandtab
 au FileType c,java,php setl shiftwidth=4 tabstop=4 expandtab
 
 " file auto save
@@ -66,6 +64,8 @@ augroup END
 " nerdtree setting
 nmap ,v :NERDTreeFind<cr>
 nmap ,g :NERDTreeToggle<cr>
+" leader r refreash 
+nmap <Leader>r :NERDTreeFocus<cr> \| R \| <c-w><c-p> 
 let NERDTreeShowHidden=1
 " airline setting
 let g:airline_powerline_fonts = 1 " 正常显示箭头
@@ -89,8 +89,6 @@ nnoremap <leader>t :TagbarToggle<CR>
 " format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-" change fzf setting
-nnoremap <silent> <leader>ag :Ag <C-R><C-W><CR>
 " change cursor shap in mac iterm2
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 let &t_SR = "\<Esc>]50;CursorShape=2\x7"
